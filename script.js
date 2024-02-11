@@ -63,5 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Добавление обработчика событий на кнопку
     toggleButton.addEventListener('click', toggleMenu);
+
+
+
+
+    // Плавный скролл
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Предотвращение стандартного действия перехода по ссылке
+        const targetId = this.getAttribute('href'); // Получение целевого идентификатора из атрибута href
+        const targetElement = document.querySelector(targetId); // Поиск целевого элемента на странице
+
+        if (targetElement) {
+          // Плавный скролл к целевому элементу
+          window.scrollTo({
+            top: targetElement.offsetTop, // Позиция целевого элемента относительно начала страницы
+            behavior: 'smooth' // Включение плавного скролла
+          });
+        }
+      });
+    });
 });
   
