@@ -57,4 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Инициализация слайдера
   updateSlider();
+
+
+
+  // PopUp
+  const videoPlayButton = document.querySelector('.videoPlay');
+  const videoPopup = document.getElementById('videoPopup');
+  const closeButton = document.querySelector('.videoPopup__close');
+
+  function closePopup() {
+    videoPopup.style.display = 'none';
+    body.style.overflow = '';
+  }
+
+  // Открытие попапа
+  videoPlayButton.addEventListener('click', () => {
+    videoPopup.style.display = 'flex';
+    body.style.overflow = 'hidden';
+  });
+
+  // Закрытие попапа по клику на оверлей
+  videoPopup.addEventListener('click', closePopup);
+
+  // Закрытие попапа по клику на крестик
+  closeButton.addEventListener('click', closePopup);
+
+  // Предотвращение закрытия попапа при клике на содержимое попапа
+  document.querySelector('.videoPopup__content').addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
 });
