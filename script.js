@@ -15,8 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
       item.style.opacity = index === current ? '1' : '0.5';
       item.style.transform = index === current ? 'scale(1)' : 'scale(0.7)';
     });
-    const slideWidth = feedbackItems[current].clientWidth;
-    const newTranslateX = -current * (slideWidth + 30);
+  
+    const feedbackContainerWidth = feedbackList.clientWidth;
+    const halfContainerWidth = feedbackContainerWidth / 2;
+    let totalWidthBeforeCurrent = 0;
+    for (let i = 0; i < current; i++) {
+      totalWidthBeforeCurrent += feedbackItems[i].clientWidth + 30; // Assuming 30px is the margin
+    }
+    const currentSlideWidth = feedbackItems[current].clientWidth;
+    const halfCurrentSlideWidth = currentSlideWidth / 2;
+    const newTranslateX = -(totalWidthBeforeCurrent + halfCurrentSlideWidth - halfContainerWidth);
+  
     feedbackList.style.transform = `translateX(${newTranslateX}px)`;
   }
 
