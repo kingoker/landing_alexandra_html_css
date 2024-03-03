@@ -4,9 +4,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
-    --primary-color: #8080c0;
-    --secondary-color: #575778;
-    --background-color: #CFCDF2;
+    --primary-color: #DEB0B2;
+    --primary-color-light: #eac7c9;
+    --secondary-color: #F5E5E6;
+    --background-color: #F5E5E6;
 }
 
 *{
@@ -36,14 +37,14 @@ img{
 .button{
     font-size: 50px;
     text-align: center;
-    color: var(--primary-color);
+    color: #fff;
     margin-top: 40px;
     display: block;
     border-radius: 20px;
     padding: 20px 30px;
     width: 100%;
-    box-shadow: 0 10px 0 0 #8080c0;
-    background: linear-gradient(180deg, #efeeff 0%, #cfcdf2 100%);
+    box-shadow: 0 10px 0 0 var(--secondary-color);
+    background: linear-gradient(180deg, var(--primary-color-light) 0%, var(--primary-color) 100%);
     text-decoration: none;
     line-height: 83%;
     transition: all 0.5s ease;
@@ -267,7 +268,7 @@ img{
     font-size: 58px;
 }
 .main__subtitle{
-    color: #8b8bab;
+    color: var(--primary-color);
     font-weight: 400;
     font-size: 33px;
     font-family: "Alice", serif;
@@ -286,15 +287,15 @@ img{
 }
 .about__info{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 30px;
 }
 .about__img{
-    max-width: 600px;
-}
-.about__img img{
-    object-fit: contain;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 .about__text{
     max-width: 666px;
@@ -307,7 +308,7 @@ img{
     font-family: "Source Serif 4", serif;
 }
 .about__name_span{
-    color: #8B8BAB;
+    color: var(--primary-color-light);
     font-size: 30px;
     line-height: 34px;
     font-weight: 400;
@@ -317,7 +318,7 @@ img{
     max-width: 700px;
 }
 .about__description p, .about__description_item{
-    color: #575778;
+    color: var(--primary-color-light);
     margin-top: 20px;
     font-size: 26px;
     line-height: 28px;
@@ -367,7 +368,7 @@ img{
     background-color: #fff;
     padding: 15px;
     border-radius: 30px;
-    box-shadow: 0 10px 4px 0 #808bc0, 0 0 10px 0 #e2e2e2;
+    box-shadow: 0 10px 4px 0 var(--primary-color), 0 0 10px 0 #e2e2e2;
 }
 .services__item_img{
     border-radius: 15px;
@@ -382,6 +383,11 @@ img{
     font-size: 26px;
     line-height: 28px;
     font-family: "Alice", serif;
+    color: var(--primary-color);
+}
+.services__item_text b{
+    font-family: "Alice", serif;
+    font-size: 30px;
 }
 .services__button{
     max-width: 500px;
@@ -476,7 +482,7 @@ img{
     justify-content: space-between;
     background-color: #fff;
     border-radius: 20px;
-    box-shadow: 0 11px 0 0 #8181c1;
+    box-shadow: 0 11px 0 0 var(--primary-color);
     max-width: 410px;
     padding: 30px;
 }
@@ -487,7 +493,7 @@ img{
     font-weight: 700;
     font-size: 42px;
     line-height: 42px;
-    color: #575778;
+    color: var(--primary-color);
     font-family: "Caveat", sans-serif;
 }
 .activities__description{
@@ -495,7 +501,7 @@ img{
     font-family: "Alice", sans-serif;
     letter-spacing: 0.1em;
     font-size: 22px;
-    color: #575778;
+    color: var(--primary-color);
 }
 .activities__button{
     font-size: 42px;
@@ -514,7 +520,7 @@ img{
     justify-content: center;
     gap: 30px;
     width: 100%;
-    box-shadow: 0 8px 10px 0 #8080c0;
+    box-shadow: 0 8px 10px 0 var(--primary-color);
     border-radius: 30px;
     background-color: #fff;
 }
@@ -527,7 +533,7 @@ img{
     width: 600px;
     max-width: 600px;
     border-radius: 30px;
-    background-color: #CFCDF2;
+    background-color: var(--background-color);
     margin: 100px 0px 100px 100px;
 }
 .contact__form_title{
@@ -545,18 +551,19 @@ img{
     stroke: none;
     font-size: 40px;
     border-radius: 21px;
-    background: #efeeff;
-    border: 1px solid #8080c0;
-    color: #575778;
+    background: var(--primary-color);
+    border: 1px solid #fff;
+    color: #fff;
 }
 .contact__form_input::placeholder{
-    color: #CFCDF2;
+    color: var(--secondary-color);
 }
 .contact__form__button{
     stroke: none;
     border: none;
     font-size: 42px;
     margin-top: 0px;
+    cursor: pointer;
 }
 .contact__image {
     width: 570px;
@@ -613,14 +620,14 @@ img{
 .footer__line{
     width: 100%;
     height: 2px;
-    background-color: #cfcdf2;
+    background-color: #fff;
     margin-top: 10px;
 }
 .king__designn{
     text-align: center;
     font-family: serif;
     text-decoration: none;
-    color: #cfcdf2;
+    color: #fff;
 }
 
 
@@ -682,7 +689,7 @@ img{
         min-height: 100vh;
         -webkit-backdrop-filter: saturate(180%) blur(30px);
         backdrop-filter: saturate(180%) blur(30px);
-        background: rgba(199, 162, 255, 0.7);
+        background: var(--background-color);
         z-index: 10;
     }
     .header__list{
